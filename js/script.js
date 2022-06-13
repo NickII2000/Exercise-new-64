@@ -41,8 +41,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Timer
 
-    //const deadLine = new Date(new Date().getTime() + 10 * (24 * 60 * 60 * 1000));
-    const deadLine = new Date(new Date().getTime() + 5000);
+    const deadLine = new Date(new Date().getTime() + 10 * (24 * 60 * 60 * 1000) + 1000);
+    // const deadLine = new Date(new Date().getTime() + 5000);
     // const deadLine = '2022-07-01';
 
 
