@@ -69,7 +69,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 seconds = timer.querySelector('#seconds');
 
             function updateClock() {
+                const t = getTimeRemaining(endTime);
 
+                days.innerHTML = t.days;
+                hours.innerHTML = t.hours;
+                minutes.innerHTML = t.minutes;
+                seconds.innerHTML = t.seconds;
             }
         }
 
