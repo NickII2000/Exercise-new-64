@@ -41,8 +41,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Timer
 
-    const deadLine = new Date(new Date().getTime() + 10 * (24 * 60 * 60 * 1000) + 1000);
-    // const deadLine = new Date(new Date().getTime() + 5000);
+    // const deadLine = new Date(new Date().getTime() + 10 * (24 * 60 * 60 * 1000) + 1000);
+    const deadLine = new Date(new Date().getTime() + 5000);
     // const deadLine = '2022-07-01';
 
 
@@ -64,13 +64,15 @@ window.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    function getZero(num) {
-        if (num >= 0 && num < 10) {
-            return `0${num}`;
-        } else {
-            return `${num}`;
-        }
-    }
+    // function getZero(num) {
+    //     if (num >= 0 && num < 10) {
+    //         return `0${num}`;
+    //     } else {
+    //         return `${num}`;
+    //     }
+    // }
+
+    const getZero = (num) => (num >= 0 && num < 10) ? `0${num}` : num;
 
     function setClock(selector, endTime) {
         const timer = document.querySelector(selector),
@@ -91,6 +93,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
             if (t.total <= 0) {
                 clearInterval(timeInterval);
+                days.innerHTML = '--';
+                hours.innerHTML = '--';
+                minutes.innerHTML = '--';
+                seconds.innerHTML = '--';
             }
         }
     }
