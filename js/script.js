@@ -62,8 +62,15 @@ window.addEventListener('DOMContentLoaded', () => {
         };
 
         function setClock(selector, endTime) {
-            const timer = document.querySelector('.timer');
+            const timer = document.querySelector(selector),
+                days = timer.querySelector('#days'),
+                hours = timer.querySelector('#hours'),
+                minutes = timer.querySelector('#minutes'),
+                seconds = timer.querySelector('#seconds');
 
+            function updateClock() {
+
+            }
         }
 
     });
