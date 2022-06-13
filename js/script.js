@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Timer
 
     // const deadLine = new Date(new Date().getTime() + 10 * (24 * 60 * 60 * 1000) + 1000);
-    const deadLine = new Date(new Date().getTime() + 5000);
+    const deadLine = new Date(new Date().getTime() + 3000);
     // const deadLine = '2022-07-01';
 
 
@@ -91,7 +91,7 @@ window.addEventListener('DOMContentLoaded', () => {
             minutes.innerHTML = getZero(t.minutes);
             seconds.innerHTML = getZero(t.seconds);
 
-            if (t.total <= 0) {
+            if (t.total < 0) {
                 clearInterval(timeInterval);
                 days.innerHTML = '--';
                 hours.innerHTML = '--';
