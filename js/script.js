@@ -39,4 +39,26 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-});
+    // Timer
+
+    //const deadline = new Date(new Date().getTime() + 10 * (24 * 60 * 60 * 1000));
+    const deadline = '2022-07-01';
+
+    function getTimeRemaining(endTime) {
+        const t = Date.parse(endTime) - Date.parse(new Date()),
+            days = Math.floor(t / (1000 * 60 * 60 * 24)),
+            // hours = Math.floor((t - days * 1000 * 60 * 60 * 24) / (1000 * 60 * 60)),
+            // minuts = Math.floor((t - days * 1000 * 60 * 60 * 24 - hours * 1000 * 60 * 60) / (1000 * 60)),
+            // seconds = Math.floor((t - days * 1000 * 60 * 60 * 24 - hours * 1000 * 60 * 60 - minuts * 1000 * 60) / 1000);
+            hours = Math.floor((t / (1000 * 60 * 60)) % 24),
+            minuts = Math.floor((t / (1000 * 60)) % 60),
+            seconds = Math.floor((t / 1000) % 60);
+        return {
+            'total': t,
+            'days': days,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds,
+        };
+
+    });
