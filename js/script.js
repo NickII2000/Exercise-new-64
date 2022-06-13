@@ -61,4 +61,9 @@ window.addEventListener('DOMContentLoaded', () => {
             'seconds': seconds,
         };
 
+        function setClock(selector, endTime) {
+            const timer = document.querySelector('.timer');
+
+        }
+
     });
