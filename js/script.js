@@ -41,8 +41,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Timer
 
-    //const deadline = new Date(new Date().getTime() + 10 * (24 * 60 * 60 * 1000));
-    const deadline = '2022-07-01';
+    //const deadLine = new Date(new Date().getTime() + 10 * (24 * 60 * 60 * 1000));
+    const deadLine = '2022-07-01';
 
     function getTimeRemaining(endTime) {
         const t = Date.parse(endTime) - Date.parse(new Date()),
@@ -67,6 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 hours = timer.querySelector('#hours'),
                 minutes = timer.querySelector('#minutes'),
                 seconds = timer.querySelector('#seconds');
+            timeInterval = setInterval(updateClock, 1000);
 
             function updateClock() {
                 const t = getTimeRemaining(endTime);
@@ -75,7 +76,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 hours.innerHTML = t.hours;
                 minutes.innerHTML = t.minutes;
                 seconds.innerHTML = t.seconds;
+
+                if (t.total <= 0) {
+                    clearInterval(timeInterval);
+                }
             }
         }
-
+        setClock('.timer', deadLine);
     });
