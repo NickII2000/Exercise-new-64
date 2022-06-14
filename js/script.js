@@ -42,26 +42,22 @@ window.addEventListener('DOMContentLoaded', () => {
     // Timer
 
     // const deadLine = new Date(new Date().getTime() + 10 * (24 * 60 * 60 * 1000) + 1000);
-    // const deadLine = new Date(new Date().getTime() + 3000);
+    const deadLine = new Date(new Date().getTime() + 3000);
     // const deadLine = '2022-07-01';
-    const deadLine = '2022-06-14';
+    // const deadLine = '2022-06-14';
 
 
     function getTimeRemaining(endTime) {
         let days, hours, minutes, seconds;
         const t = Date.parse(endTime) - Date.parse(new Date());
 
-        // if (t <= 0) {
-        if (false) {
+        if (t <= 0) {
             days = '--';
             hours = '--';
             minutes = '--';
             seconds = '--';
         } else {
             days = Math.floor(t / (1000 * 60 * 60 * 24));
-            // hours = Math.floor((t - days * 1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-            // minutes = Math.floor((t - days * 1000 * 60 * 60 * 24 - hours * 1000 * 60 * 60) / (1000 * 60));
-            // seconds = Math.floor((t - days * 1000 * 60 * 60 * 24 - hours * 1000 * 60 * 60 - minutes * 1000 * 60) / 1000);
             hours = Math.floor((t / (1000 * 60 * 60)) % 24);
             minutes = Math.floor((t / (1000 * 60)) % 60);
             seconds = Math.floor((t / 1000) % 60);
@@ -102,13 +98,13 @@ window.addEventListener('DOMContentLoaded', () => {
             minutes.innerHTML = getZero(t.minutes);
             seconds.innerHTML = getZero(t.seconds);
 
-            // if (t.total < 0) {
-            //     clearInterval(timeInterval);
-            //     days.innerHTML = '--';
-            //     hours.innerHTML = '--';
-            //     minutes.innerHTML = '--';
-            //     seconds.innerHTML = '--';
-            // }
+            if (t.total < 0) {
+                clearInterval(timeInterval);
+                days.innerHTML = '--';
+                hours.innerHTML = '--';
+                minutes.innerHTML = '--';
+                seconds.innerHTML = '--';
+            }
         }
     }
     setClock('.timer', deadLine);
