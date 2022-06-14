@@ -42,15 +42,17 @@ window.addEventListener('DOMContentLoaded', () => {
     // Timer
 
     // const deadLine = new Date(new Date().getTime() + 10 * (24 * 60 * 60 * 1000) + 1000);
-    const deadLine = new Date(new Date().getTime() + 3000);
+    // const deadLine = new Date(new Date().getTime() + 3000);
     // const deadLine = '2022-07-01';
+    const deadLine = '2021-07-01';
 
 
     function getTimeRemaining(endTime) {
         let days, hours, minutes, seconds;
         const t = Date.parse(endTime) - Date.parse(new Date());
 
-        if (t <= 0) {
+        // if (t <= 0) {
+        if (false) {
             days = '--';
             hours = '--';
             minutes = '--';
